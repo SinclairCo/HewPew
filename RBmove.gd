@@ -18,6 +18,7 @@ func _fixed_process(delta):
 	var right = Input.is_action_pressed("move_right")
 	var direction = Vector2((right - left)*2, (down - up)*2)
 	direction = direction.normalized()
+	#no more conflicts
 	print(get_linear_velocity())
 	if(abs(get_linear_velocity().x) < run_speed || abs(get_linear_velocity().x + direction.x) < abs(get_linear_velocity().x) ):
 		apply_impulse(Vector2(0,0), direction*400*delta)
