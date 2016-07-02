@@ -16,7 +16,7 @@ func _fixed_process(delta):
 	var up = Input.is_action_pressed("move_up")
 	var left = Input.is_action_pressed("move_left")
 	var right = Input.is_action_pressed("move_right")
-	var direction = Vector2(right - left, down - up) #MAKE DIRECTION VECTOR
+	var direction = Vector2((right - left)*2, (down - up)*2)
 	direction = direction.normalized()
 	print(get_linear_velocity())
 	if(abs(get_linear_velocity().x) < run_speed || abs(get_linear_velocity().x + direction.x) < abs(get_linear_velocity().x) ):
